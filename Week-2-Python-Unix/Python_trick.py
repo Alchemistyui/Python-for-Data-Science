@@ -1,5 +1,7 @@
 '''
+--------------
 is & == ?
+--------------
 '''
 x = 3
 y = 3.0
@@ -9,9 +11,11 @@ print(x is y)
 print(x == y) 
 
 '''
+--------------
 String
 these two method return only copy but not change the original!!
 since string is immutable
+--------------
 '''
 x = 'HEllo'
 # print(capitalize(x)) --> false!!
@@ -38,11 +42,22 @@ s = 'hello' # pos idx:[0,1,2,3,4]; neg idx: [-5, -4, -3, -2, -1]
 print(s[0:3])
 print(s[4:7]) # not cause an error
 print(s[-4:-1]) #negitive idx = positive idx - str length
+# find(sub [, start, end]) -> lowest start idx or -1
+print(s.find('el'))
+# convert to numerical
+s = '12'
+int(s)
+float(s)
+# format
+statement = 'we love {} {}'
+print(statement.format('data', 'analysis')) 
 
 
 
 '''
+--------------
 Loops
+--------------
 '''
 # range(start, stop, [,step]]): start is inclusive, end is exclusive
 for i in range(0, 10, 2):
@@ -50,7 +65,9 @@ for i in range(0, 10, 2):
 
 
 '''
+--------------
 Conditions
+--------------
 '''
 # if, elif, else
 def return_what():
@@ -59,7 +76,9 @@ x = return_what()
 print(x)
 
 '''
+--------------
 Scope
+--------------
 '''
 # beware, scope val and global val has same name is a bad practice
 # notice, some companies like google don't recommend using global val
@@ -71,6 +90,38 @@ def my_abs(val):
         return val
 print(val)
 
+'''
+--------------
+List: mutable
+--------------
+'''
+li = [11, 22, 33]
+for i in li:
+    print(i)
+for i in range(0, len(li)):
+    print(li[i])
+# list elem is changable
+li[1] = 95
+li.append(44)
+li.pop(2) # remove the elem using idx and return that elem
+li.remove(44) # remove the elem using its value
+# merge 2 list
+l1 = [1,2,3]
+l2 = [4,5,6]
+li.extend(l2)
+# zip: crate a pairing of 2 lists
+for i in zip(l1, l2):
+    print(i)
+#  Deep Copy and Shallow Copy
+cp = l1 # shallow, change list will influence all the referance
+cp = list(l1) # deep, 
+
+
+'''
+--------------
+Tuple: immutable
+--------------
+'''
 
 
 
