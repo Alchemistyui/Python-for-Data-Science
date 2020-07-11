@@ -119,19 +119,38 @@ cp = list(l1) # deep,
 
 '''
 --------------
-Tuple: immutable
+Tuple: immutable, used for connected info in some way
 --------------
 '''
+# collect diff type of data in tuple
+tup = ('Honda', 'Civic', 4, 2017)
+tup[1]
+len(tup)
+for i in tup:
+    print(i)
+# immutability!!!->1.general & parallel computing, 2.use as key of dict
 
 
-
-
-
-
-
-
-
-
+'''
+--------------
+Dictionaries: fast for lookups, key-value pair, unordered collection
+--------------
+'''
+# key is immutable->tuple, value can be list
+dict1 = {('Cars', 1984): ['bob', 'tom'], ('cars', 2020): ['mary', 'jean']}
+len(dict1)
+print(dict1[('Cars', 1984)])
+# add elem, if the key exist, just reassign its value
+dict1[('Cars', 3000)] = 7
+print(dict1)
+# safe way to get from dict: return none when key not in dict, but not error
+dict1.get(('Cars', 3000))
+('Cars', 3000) in dict1
+# remove
+dict1.pop(('Cars', 3000)) # return the value back
+# loop: dict1.items() return tuples with key & value
+for key, value in dict1.items():
+    print(key, ":", value)
 
 
 
