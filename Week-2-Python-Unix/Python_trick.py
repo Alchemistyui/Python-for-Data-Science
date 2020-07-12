@@ -149,8 +149,54 @@ dict1.get(('Cars', 3000))
 # remove
 dict1.pop(('Cars', 3000)) # return the value back
 # loop: dict1.items() return tuples with key & value
+# !!!!: dont move/change the data structure when iterate it
 for key, value in dict1.items():
     print(key, ":", value)
+
+
+
+'''
+--------------
+Comprehension: create dict & list quickly
+--------------
+'''
+# ** = square
+l = [1**2 for i in range(1, 11)]
+l2 = [i for i in range(0,20,2)]
+l3 = [i%2 for i in range(0,10)]
+import random
+l4 = [random.randint(0,5) for i in range(0,10)]
+# dict
+d = {i: i**2 for i in range(1, 11)}
+d2 = {i: chr(i) for i in range(65,90)}
+
+
+'''
+--------------
+Set:
+*** 3 qualities
+1.unordered -> fast for key operation
+2. unique element, no duplicates
+3.support useful set operations: union, intersection
+***
+--------------
+'''
+colors = set(['blue', 'green', 'red'])
+colors.add('yellow')
+# move items:discard & remove
+# discard item doesn't in set, it will do nothing, while remove return an error
+colors.discard('green') # recommend
+# union
+colors = set(['blue', 'green', 'red'])
+my_colors = set(['blue', 'yellow'])
+either = my_colors.union(colors) # / my_colors | colors
+both = my_colors.intersection(colors) # / my_colors & colors
+
+
+
+
+
+
 
 
 
