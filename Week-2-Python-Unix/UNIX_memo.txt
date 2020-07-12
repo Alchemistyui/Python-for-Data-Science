@@ -1,0 +1,54 @@
+3 main parts of UNIX: shell, kernal, programs
+shell is the interface btw the user and the kernal, act as a command line interpreter
+command: programs that are excecuted by the shell
+everything in UNIX is represented by a file or a process!
+process: an excecuting program identified by a unique process identifier(PID).
+file: a collection of data and are organized in a directory structure. 
+directory: special files that contain other files.
+files are organized in a hierarchical structure.(tree structure)
+-------------
+path: separate directories by /
+absolute path: start at root(root is /)
+relative path: start at working directory
+(./ refers to working dir, .. refer to level above)
+-------------
+TILDE character(~): refer to the special user's home directory(dir under users)
+pwd: command to check(print) the working dir
+ls: list files and folders; options(-l: display in long form; -a: show hidden files)
+cd: change dir
+cat: show the content of text files(print the content)
+man: manual pages; man ls: lookup documentation for ls
+-------------
+Utility Commands
+mkdir: create dir
+*: wildcard to replace any other character within a given pattern(ls *.txt)
+stdin: usually from keyboard, can be switch to the file 
+stdout: usually to the terminal, can be switch to file or process
+stderr: usually to the terminal
+cp: copy(cp source destination)
+mv: move(mv source destination)
+-------------
+Redirect Standard IO
+redirect stdin to file: command < file
+redirect stdout to file(rewrite): command > file / command 1> file
+redirect stdout to file(append): command >> file
+redirect stderr to file: command 2> file
+redirect stderr to file(append): command 2>> file
+redirect stdout & stderr: command 2> file1 > file2
+redirect stdout & stderr to the same file: command > file 2>&1
+-------------
+cat: show the content of text files(print the content)
+more: fit the content in the shell, press space to go through, Q to quit
+sort: sort file content by alphabetical order(sort a.txt > b.txt)
+uniq: get the unique lines of the file
+wc: word count(opt: -l count lines)
+
+
+
+
+
+
+
+
+
+
