@@ -41,7 +41,44 @@ cat: show the content of text files(print the content)
 more: fit the content in the shell, press space to go through, Q to quit
 sort: sort file content by alphabetical order(sort a.txt > b.txt)
 uniq: get the unique lines of the file
-wc: word count(opt: -l count lines)
+wc: word count(opt: -l count lines)(default output # of lines, words, chars)
+who: who are loged in the unix
+a; b(semicolon operator): execute a and after that excecute b(pwd; ls -l)
+parenthesis: "(pwd; ls -l) > /dev/null" -> ():priority, /dev/null:ignore output
+-------------
+UNIX pipe & filters
+pipe: send the output of one command to the input of another
+cat foo.txt | wc
+filter: is placed after unix pipe, take the input and transform it in someway
+filters: grep(search for lines with a given string/look for a pattern), more, less, sort, uniq, cat, wc
+ps: command for reporting process status(-aef: every process associated with all the terminals in the system)
+
+-------------
+filter command
+grep, sort, uniq, cat, wc
+head, tail, cut, sed, find
+head: list the 1st n lines in text file or input stream
+cut: cut a portion of each lines of a file
+sed: stream editor, perform basic text transformation on an input stream
+find: quick search in file system or hierarchy
+eg: sed -e 's/ /\'$'\n/g' < shakespeare.txt | sort | sed '/^$/d' | uniq -c | sort -nr | head -15 > most_appear.txt
+explain: sed1 convert each space btw words in the file into a new line(/g: global, ' /': space, '/\'$'\n': newline); sed2 remove the remaining black lines; uniq -c: get the unique words and their counts, sort -nr: numerical sort
+
+-------------
+live coding cls
+head -5 fruits* : match all files begin with fruits
+(head -2; tail -2) < fruits* : get the first 2 lines and last 2 lines
+paste: merge all files into one file side by side, so its very powerful when create table data(paste fruits* > all.txt)
+***: when dataset bigger, it's harder for unix shell to execute (but python has libs to do it efficiently)
+---
+ps -aef | cut -c3-5 | sort | uniq -c | sort -nr | head -3
+dscl . -list /Users UniqueID: show the users and their UID
+ps -aef: UID(0-system, 501-1st mac user), PID, PPID
+cut -c3-5: cut the section from character 3 to char 5
+---
+ps -aef | cut -c3-5 | sort | grep 501 | wc -l
+---
+gnuplot: plot imgs
 
 
 
